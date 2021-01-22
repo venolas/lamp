@@ -49,7 +49,11 @@ sudo a2enmod rewrite
 sudo php7enmod mcrypt
 
 # Edit php.ini
-
+memory_limit = 256M
+upload_max_filesize = 12M
+post_max_size = 13M
+file_uploads = On
+max_execution_time = 180
 
 
 # Restart Apache
