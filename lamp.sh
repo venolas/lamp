@@ -3,7 +3,7 @@
 #######################################
 # Bash script to install an AMP stack and PHPMyAdmin plus tweaks. For Debian based systems.
 # Written by @AamnahAkram from http://aamnah.com
-# Edited by Venolas
+# Modified by Venolas
 # In case of any errors (e.g. MySQL) just re-run the script. Nothing will be re-installed except for the packages with errors.
 #######################################
 
@@ -36,7 +36,7 @@ echo -e "$Cyan \n Installing phpMyAdmin $Color_Off"
 sudo apt install phpmyadmin -y
 
 echo -e "$Cyan \n Verifying installs$Color_Off"
-sudo apt install apache2  mysql-client mysql-server -y
+sudo apt install apache2 mysql-client mysql-server -y
 
 ## TWEAKS and Settings
 # Permissions
@@ -50,12 +50,14 @@ sudo a2enmod rewrite
 sudo php7enmod mcrypt
 
 # Edit php.ini
-memory_limit = 256M
-upload_max_filesize = 12M
-post_max_size = 13M
-file_uploads = On
-max_execution_time = 180
+sudo sed -i 's,^memory_limit =.*$,memory_limit = 1024M,' /etc/php/7.4/apache2/php.ini
+sudo sed -i 's,^upload_max_filesize =.*$,upload_max_filesize = 1024M,' /etc/php/7.4/apache2/php.ini
+sudo sed -i 's,^post_max_size =.*$,post_max_size = 500M,' /etc/php/7.4/apache2/php.ini
+sudo sed -i 's,^file_uploads =.*$,file_uploads = On,' /etc/php/7.4/apache2/php.ini
+sudo sed -i 's,^max_execution_time =.*$,max_execution_time = 180,' /etc/php/7.4/apache2/php.ini
+echo -e "$Green \n php.ini has been changed $Color_Off"
 
+#Download PHP File Manager
 
 # Restart Apache
 echo -e "$Cyan \n Restarting Apache $Color_Off"
