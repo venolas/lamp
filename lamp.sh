@@ -34,6 +34,7 @@ sudo apt install mysql-server mysql-client -y
 
 echo -e "$Cyan \n Installing phpMyAdmin $Color_Off"
 sudo apt install phpmyadmin -y
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 
 echo -e "$Cyan \n Verifying installs$Color_Off"
 sudo apt install apache2 mysql-client mysql-server -y
@@ -58,6 +59,10 @@ sudo sed -i 's,^max_execution_time =.*$,max_execution_time = 180,' /etc/php/7.4/
 echo -e "$Green \n php.ini has been changed $Color_Off"
 
 #Download PHP File Manager
+echo -e "$Cyan \n Downloading PHP File Manager $Color_Off"
+
+#Download Wordpress
+echo -e "$Cyan \n Downloading Wordpress $Color_Off"
 
 # Restart Apache
 echo -e "$Cyan \n Restarting Apache $Color_Off"
