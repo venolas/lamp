@@ -27,7 +27,7 @@ echo -e "$Cyan \n Installing Apache2 $Color_Off"
 sudo apt install apache2 apache2-doc apache2-mpm-prefork apache2-utils libexpat1 ssl-cert -y
 
 echo -e "$Cyan \n Installing PHP & Requirements $Color_Off"
-sudo apt install php php-{bcmath,bz2,intl,gd,mbstring,mysql,zip,fpm,mcrypt} -y
+sudo apt install php php-{bcmath,bz2,intl,gd,mbstring,mysql,zip,fpm,mcrypt,json,curl} -y
 
 echo -e "$Cyan \n Installing MariaDB $Color_Off"
 sudo apt install mariadb-server -y
