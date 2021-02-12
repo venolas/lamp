@@ -29,15 +29,16 @@ sudo apt install apache2 apache2-doc apache2-mpm-prefork apache2-utils libexpat1
 echo -e "$Cyan \n Installing PHP & Requirements $Color_Off"
 sudo apt install php php-{bcmath,bz2,intl,gd,mbstring,mysql,zip,fpm,mcrypt} -y
 
-echo -e "$Cyan \n Installing MySQL $Color_Off"
-sudo apt install mysql-server mysql-client -y
+echo -e "$Cyan \n Installing MariaDB $Color_Off"
+sudo apt install mariadb-server -y
+sudo mysql_secure_installation
 
 echo -e "$Cyan \n Installing phpMyAdmin $Color_Off"
 sudo apt install phpmyadmin -y
 sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 
 echo -e "$Cyan \n Verifying installs$Color_Off"
-sudo apt install apache2 mysql-client mysql-server -y
+sudo apt install apache2 mariadb-server -y
 
 ## TWEAKS and Settings
 # Permissions
