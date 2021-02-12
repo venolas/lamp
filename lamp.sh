@@ -61,6 +61,7 @@ echo -e "$Green \n php.ini has been changed $Color_Off"
 
 #Download PHP File Manager
 echo -e "$Cyan \n Downloading PHP File Manager $Color_Off"
+cd /var/www/html/
 git clone https://github.com/venolas/tinyfilemanager.git
 mv tinyfilemanager filemanager
 
