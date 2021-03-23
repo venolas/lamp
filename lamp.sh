@@ -54,7 +54,7 @@ sudo php7enmod mcrypt
 # Edit php.ini
 sudo sed -i 's,^memory_limit =.*$,memory_limit = 1024M,' /etc/php/7.4/apache2/php.ini
 sudo sed -i 's,^upload_max_filesize =.*$,upload_max_filesize = 1024M,' /etc/php/7.4/apache2/php.ini
-sudo sed -i 's,^post_max_size =.*$,post_max_size = 500M,' /etc/php/7.4/apache2/php.ini
+sudo sed -i 's,^post_max_size =.*$,post_max_size = 1024M,' /etc/php/7.4/apache2/php.ini
 sudo sed -i 's,^file_uploads =.*$,file_uploads = On,' /etc/php/7.4/apache2/php.ini
 sudo sed -i 's,^max_execution_time =.*$,max_execution_time = 180,' /etc/php/7.4/apache2/php.ini
 echo -e "$Green \n php.ini has been changed $Color_Off"
